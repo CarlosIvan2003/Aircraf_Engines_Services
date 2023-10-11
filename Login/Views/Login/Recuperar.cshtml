@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null;
+}
+@using Login.Models
+@model usuarioDTO
+
+@if (ViewBag.Restablecido == null)
+{
+    <form asp-action="Recuperar" method="post">
+        <input type="hidden" name="token" value="@Context.Request.Query["token"]" />
+        <h1>Restablecer contraseña</h1>
+
+        <div>
+            <label asp-for="password"></label>
+            <input asp-for="password" type="password" required />
+        </div>
+
+        <div>
+            <label asp-for="confirmarPassword"></label>
+            <input asp-for="confirmarPassword" type="password" required />
+        </div>
+
+        @if (ViewBag.Password != null)
+        {
+            <div>
+                @ViewBag.Password
+            </div>
+        }
+
+        <div>
+            <input type="submit" value="Restablecer" />
+        </div>
+    </form>
+}
+else
+{
+    <div>
+        @ViewBag.Restablecido
+        <a asp-action="Login">Ingresar</a>
+    </div>
+
+    @if (ViewBag.NoRestablecido != null)
+    {
+        <div>
+            @ViewBag.NoRestablecido
+        </div>
+    }
+}

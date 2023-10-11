@@ -1,0 +1,124 @@
+﻿@using Login.Models
+@model usuarioDTO
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="icon" href="~/img/plane-departure-solid.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <main class="d-flex align-items-center main">
+        <form class="container rounded-4 bg-light Login mt-4 mb-4" asp-action="Login" method="post">
+            <article class="row">
+                <section class="col-12 col-lg-6 l-img position-relative ">
+                    <img src="~/img/brendan-sapp-aaCyXl_bYyg-unsplash-PhotoRoom.png-PhotoRoom.png" alt="Plane"
+                         class="img-2">
+                </section>
+
+                <section class="col-12 col-lg-6">
+                    <h1 class="mt-4 mb-3 l-logo text-center"><span>A</span>ircraft <span>E</span>ngines <span>S</span>ervices</h1>
+                    <br>
+                    <h2>Iniciar sesión</h2>
+                    <div class="row mt-4">
+                        <div class="col-12 col-lg-2 col-md-1"></div>
+                        <div class="col-12 col-lg-10 col-md-11 d-flex justify-content-center ">
+                            <div class="sesion-input">
+
+                                <div class="sesion-input mt-2">
+                                    <input class="input" asp-for="correo" type="email" id="search" placeholder=" " required>
+                                    <label asp-for="correo" for="search">Email <i class="fa-solid fa-user"></i></label>
+                                </div>
+
+                                <div class="row mt-2 mb-3"></div>
+
+                                <div class="sesion-input">
+                                    <input class="input" asp-for="password" type="password" id="search" placeholder=" " required>
+                                    <label asp-for="password" for="search">Cotraseña <i class="fa-solid fa-lock"></i></label>
+                                </div>
+                                @if (ViewBag.Validacion != null)
+                                {
+                                    <div>
+                                        @ViewBag.Validacion
+                                    </div>
+                                }
+                                <div class="row mt-4 mb-4">
+                                </div>
+
+                                <div class="row mb-4">
+                                    <input type="submit" value="Iniciar Sesión" class="rounded-4" id="sesion">
+                                </div>
+                                @if (ViewBag.Confirmado != null)
+                                {
+                                    <div>
+                                        @ViewBag.Confirmado
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </form>
+    </main>
+    
+    <script src="https://kit.fontawesome.com/b0cb49c5f4.js" crossorigin="anonymous"></script>
+    <script src="~/js/script.js" ></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" ></script>
+</body>
+</html>
+
+
+
+<!--form asp-action="Login" method="post">
+
+    <div>
+        <label asp-for="correo"></label>
+        <input asp-for="correo" required />
+        <span asp-validation-for="correo"></span>
+    </div>
+
+    <div>
+        <label asp-for="password"></label>
+        <input asp-for="password" required />
+        <span asp-validation-for="password"></span>
+    </div>
+
+    @if (ViewBag.Validacion != null)
+    {
+        <div>
+            @ViewBag.Validacion
+        </div>
+    }
+
+    <div>
+        <input type="submit" value="Iniciar sesion" />
+        <a asp-action="registro">No tienes cuenta registrate</a>
+        <a asp-action="restablecer">Olvide mi contraseña</a>
+    </div>
+
+    @if (ViewBag.Confirmado != null)
+    {
+        <div>
+            @ViewBag.Confirmado
+        </div>
+
+    }
+</form-->
+
+
+
+
+
+

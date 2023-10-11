@@ -1,0 +1,222 @@
+/* Global */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+main{
+    height: 100vh;
+    background: #f8f9fa;
+}
+
+.none{
+    display: none;
+}
+
+.block{
+    display: block;
+}
+
+.bg-brown{
+    background: #a52a2a;
+}
+
+/* .fade-in-container {
+    opacity: 0;
+    animation: fade-in-animation 2.5s ease-in-out forwards;
+} */
+
+
+/* Log - in */
+.main{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/aircraft-547105_1280.jpg');
+    background-size: cover; 
+    background-position: center; 
+}
+.Login{
+    width: 60%;
+}
+.l-img{
+    height: 50vh;
+    background-image: url('../img/clouds-1768967_1280.jpg');
+    background-size: cover; 
+    background-position: center;   
+    border-radius: 7px 0 0 7px;
+    display: flex;
+    align-items: center;
+}
+
+.img-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+    z-index: 1; /* Ajusta el z-index según sea necesario para controlar la superposición */
+}
+.l-logo{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+}
+.l-logo span{
+    color: brown;
+}
+
+.sesion-input {
+    position: relative;
+    width: 90%;
+    margin: auto;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: none;
+    border-bottom: 2px solid #e50914;
+    color: #333;
+    font-size: 16px;
+    transition: border-bottom 0.3s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-bottom: 2px solid #e50914;
+}
+
+
+label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #999;
+    font-size: 16px;
+    pointer-events: none;
+    transition: transform 0.2s ease, font-size 0.2s ease, top 0.2s ease;
+}
+
+.input:focus + label, input:not(:placeholder-shown) + label {
+    transform: translateY(-15px);
+    font-size: 1rem;
+    top: -10px;
+    color: #e50914;
+}
+
+input[type="submit"]{
+    width: 85%;
+    margin: auto;
+    border: none;
+    padding: .7rem;
+    border: 2px rgb(140,46,46) solid;
+}
+
+input[type="submit"]:hover{
+    color:white;
+    background: rgb(140,46,46);
+    background: linear-gradient(0deg, rgba(140,46,46,1) 0%, rgba(165,42,42,1) 48%, rgba(209,21,21,1) 100%);
+    font-size: 1.1rem;
+    border: 2px black solid;
+
+}
+
+/* Main */
+.principal{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/w-main.jpg');
+    background-size: cover; 
+    background-position: center; 
+}
+
+.card{
+    position: relative; 
+    display: inline-block;
+    cursor: pointer; 
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.485), rgba(0, 0, 0, 0.564)); /* Gradiente con filtro de transparencia */
+    pointer-events: none; /* Evita que el pseudoelemento interfiera con la interacción del usuario */
+  }
+
+.zoom:hover{
+    transform: scale(1.05);
+}
+
+.filter{
+    width: 100%; 
+    height: 85%; 
+    z-index:1 ;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.fa-circle-xmark{
+    font-size: 3rem;
+    color: #f8f9fa;
+}
+
+.close{
+    width: 5rem;
+}
+
+/* Registar */
+
+.contenedor{
+    width: 90%;
+    height: 75vh;
+    margin: auto;
+}
+
+.c-form{
+    border-radius:  0 15px 15px 0;
+}
+.floating{
+    border-radius:  15px 0 0 15px;
+}
+
+
+
+/* Media query */
+@media (max-width: 900px) {
+    .img-2 {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .Login{
+        width: 95%;
+    }
+    main{
+        height: auto;
+    }
+    .principal{
+        height: 100vh;
+    }
+    .filter{
+        height: 100vh; 
+    }
+    .c-form{
+        border-radius:   0 0 15px 15px;
+    }
+    .floating{
+        border-radius:  15px 15px 0 0;
+    }
+}
+
+/* Animaciones */
+@keyframes fade-in-animation {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,78 @@
+﻿@using Login.Models
+@model usuarioDTO
+@{
+    Layout = null;
+}
+
+@if (ViewBag.Creado == null) {
+    <form asp-action="Registro" method="post">
+
+        <div>
+            <label asp-for="nombre"></label>
+            <input asp-for="nombre" required />
+            <span asp-validation-for="nombre"></span>
+        </div>
+
+        <div>
+            <label asp-for="apellidoPaterno"></label>
+            <input asp-for="apellidoPaterno" required />
+            <span asp-validation-for="apellidoPaterno"></span>
+        </div>
+
+        <div>
+            <label asp-for="apellidoMaterno"></label>
+            <input asp-for="apellidoMaterno" required />
+            <span asp-validation-for="apellidoMaterno"></span>
+        </div>
+
+        <div>
+            <label asp-for="perfilId"></label>
+            <select asp-for="perfilId" asp-items="ViewBag.listaPerfiles" required>
+                <option disabled selected>Escoje un perfil</option>
+            </select>
+            <span asp-validation-for="perfilId"></span>
+        </div>
+
+        @if (ViewBag.mensajeperfil != null)
+        {
+            <div>
+                @ViewBag.mensajeperfil
+            </div>
+        }
+
+        <div>
+            <label asp-for="correo"></label>
+            <input asp-for="correo" required />
+            <span asp-validation-for="correo"></span>
+        </div>
+
+        <div>
+            <label asp-for="password"></label>
+            <input asp-for="password" required />
+            <span asp-validation-for="password"></span>
+        </div>
+
+        <div>
+            <label asp-for="confirmarPassword"></label>
+            <input asp-for="confirmarPassword" required />
+            <span asp-validation-for="confirmarPassword"></span>
+        </div>
+
+        @if (ViewBag.mensajePassword != null)
+        {
+            <div>
+                @ViewBag.mensajePassword
+            </div>
+        }
+
+        <div>
+            <input type="submit" value="Registar" />
+        </div>
+    </form>
+}
+else
+{
+    <p>@ViewBag.Mensaje</p>
+    <a asp-action="Login">Regresar</a>
+}
+

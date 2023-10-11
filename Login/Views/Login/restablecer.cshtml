@@ -1,0 +1,36 @@
+﻿@{
+    Layout = null;
+}
+@using Login.Models
+@model usuarioDTO
+
+@if (ViewBag.Restablecer == null)
+{
+    <form asp-action="restablecer" method="post">
+        <h1>Recuperar contraseña</h1>
+        <p>Ingresa tu correo electronico para restablecerla</p>
+
+        <div>
+            <label asp-for="correo"></label>
+            <input asp-for="correo" required />
+        </div>
+
+        <div>
+            <input type="submit" value="Recuperar" />
+        </div>
+
+        @if (ViewBag.Fallo != null)
+        {
+            <div>
+                @ViewBag.Fallo
+            </div>
+        }
+    </form>
+}
+else
+{
+    <div>
+        @ViewBag.Restablecer
+        <a asp-action="Login">Regresar</a>
+    </div>
+}
