@@ -119,6 +119,15 @@ input[type="submit"]:hover{
 
 }
 
+.links {
+    text-align: right;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
 /* Main */
 .principal{
     width: 100%;

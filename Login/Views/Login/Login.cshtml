@@ -4,7 +4,6 @@
     Layout = null;
 }
 
-@*hola*@
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,6 +45,9 @@
                                 <div class="sesion-input">
                                     <input class="input" asp-for="password" type="password" id="search" placeholder=" " required>
                                     <label asp-for="password" for="search">Cotraseña <i class="fa-solid fa-lock"></i></label>
+                                    <div class="links">
+                                        <a asp-action="restablecer">Olvide mi contraseña</a>
+                                    </div>
                                 </div>
                                 @if (ViewBag.Validacion != null)
                                 {
@@ -58,6 +60,10 @@
 
                                 <div class="row mb-4">
                                     <input type="submit" value="Iniciar Sesión" class="rounded-4" id="sesion">
+                                    <div class="links">
+                                        <a asp-action="registro">No tienes cuenta registrate</a>
+                                    </div>
+                                    
                                 </div>
                                 @if (ViewBag.Confirmado != null)
                                 {
